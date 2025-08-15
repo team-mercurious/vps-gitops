@@ -1,0 +1,184 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-enrichment
+  namespace: default
+  labels:
+    app: api-enrichment
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-enrichment
+  template:
+    metadata:
+      labels:
+        app: api-enrichment
+        version: v1
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: api-enrichment
+        image: ghcr.io/team-mercurious/api-enrichment:latest # {"$imagepolicy": "flux-system:api-enrichment"}
+        ports:
+        - containerPort: 8080
+          name: http
+        env:
+        - name: PORT
+          value: "8080"
+        - name: LOG_LEVEL
+          value: "info"
+        # Kafka configuration
+        - name: KAFKA_BROKERS
+          value: "mercurious-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092"
+        - name: KAFKA_SECURITY_PROTOCOL
+          value: "SASL_PLAINTEXT"
+        - name: KAFKA_SASL_MECHANISM
+          value: "SCRAM-SHA-512"
+        - name: KAFKA_SASL_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: kafka-credentials
+              key: username
+        - name: KAFKA_SASL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: kafka-credentials
+              key: password
+        # Database configuration
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              name: external-services
+              key: mongodb-uri
+        # Additional MongoDB configuration formats
+        - name: MONGO_URI
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: MONGO_URI
+        - name: MONGO_URL
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: MONGO_URL
+        - name: DATABASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: DATABASE_URL
+        - name: REDIS_URI
+          valueFrom:
+            secretKeyRef:
+              name: external-services
+              key: redis-uri
+        # Additional Redis configuration formats
+        - name: REDIS_URL
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: REDIS_URL
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: REDIS_HOST
+        - name: REDIS_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: REDIS_PORT
+        - name: REDIS_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: REDIS_USERNAME
+        - name: REDIS_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: REDIS_PASSWORD
+        # API Keys
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: api-keys
+              key: openai-api-key
+        # Environment
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: NODE_ENV
+        # Health check for Kafka microservice - simplified
+        livenessProbe:
+          exec:
+            command:
+            - sh
+            - -c
+            - "ps aux | grep '[n]ode' || exit 1"
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          exec:
+            command:
+            - sh
+            - -c
+            - "ps aux | grep '[n]ode' || exit 1"
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 3
+        # Resource limits
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        # Security context
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          runAsUser: 1000
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - ALL
+        # Temporary volumes
+        volumeMounts:
+        - name: tmp
+          mountPath: /tmp
+        - name: var-cache
+          mountPath: /var/cache
+      volumes:
+      - name: tmp
+        emptyDir: {}
+      - name: var-cache
+        emptyDir: {}
+      # Security and scheduling
+      securityContext:
+        fsGroup: 1000
+      serviceAccountName: api-enrichment
+      automountServiceAccountToken: false
+      imagePullSecrets:
+      - name: ghcr-pull-secret
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - api-enrichment
+              topologyKey: kubernetes.io/hostname

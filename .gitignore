@@ -1,0 +1,37 @@
+# Cache directories
+.cache/
+.npm/
+.local/
+.kube/
+
+# Node.js
+node_modules/
+.node_repl_history
+
+# Claude specific files
+.claude/
+.claude.json
+.claude.json.backup
+.bash_history
+.bash_logout
+.bashrc
+.profile
+
+# System files
+.config/
+devops-setup/v2.2.2
+*.tgz
+*.tar.gz
+
+# Temporary files
+*.tmp
+*.log
+
+# SSH and security keys
+.ssh/
+*.pem
+*.key
+
+# Binary executables
+*.exe
+*.bin

@@ -1,0 +1,109 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-gateway-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    traefik.ingress.kubernetes.io/router.middlewares: default-ratelimit@kubernetescrd
+spec:
+  tls:
+  - hosts:
+    - api2.gotravelyzer.com
+    secretName: api-gateway-tls
+  rules:
+  - host: api2.gotravelyzer.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: api-gateway
+            port:
+              number: 80
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: ratelimit
+  namespace: default
+spec:
+  rateLimit:
+    average: 100
+    burst: 200
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: grafana-ingress
+  namespace: monitoring
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+spec:
+  tls:
+  - hosts:
+    - grafana.vps.local  # Change this to your actual domain
+    secretName: grafana-tls
+  rules:
+  - host: grafana.vps.local  # Change this to your actual domain
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: kube-prometheus-stack-grafana
+            port:
+              number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: traefik-dashboard-ingress
+  namespace: kube-system
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    traefik.ingress.kubernetes.io/router.middlewares: kube-system-auth@kubernetescrd
+spec:
+  tls:
+  - hosts:
+    - traefik.vps.local  # Change this to your actual domain
+    secretName: traefik-dashboard-tls
+  rules:
+  - host: traefik.vps.local  # Change this to your actual domain
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: traefik
+            port:
+              number: 9000
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: auth
+  namespace: kube-system
+spec:
+  basicAuth:
+    secret: traefik-auth-secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: traefik-auth-secret
+  namespace: kube-system
+type: Opaque
+data:
+  # admin:admin (change this!)
+  # Generated with: htpasswd -nb admin admin | base64 -w 0
+  users: YWRtaW46JGFwcjEkSDY1dnVha1MkYzFuQmJJdFlSLmN0OUcydFpsNng4LgoK
