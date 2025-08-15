@@ -1,0 +1,139 @@
+apiVersion: v1
+items:
+- apiVersion: kafka.strimzi.io/v1beta2
+  kind: Kafka
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"Kafka","metadata":{"annotations":{},"name":"mercurious-cluster","namespace":"kafka"},"spec":{"entityOperator":{"topicOperator":{"resources":{"limits":{"cpu":"200m","memory":"512Mi"},"requests":{"cpu":"100m","memory":"512Mi"}}},"userOperator":{"resources":{"limits":{"cpu":"200m","memory":"512Mi"},"requests":{"cpu":"100m","memory":"512Mi"}}}},"kafka":{"authorization":{"type":"simple"},"config":{"default.replication.factor":1,"inter.broker.protocol.version":"3.7","min.insync.replicas":1,"offsets.topic.replication.factor":1,"transaction.state.log.min.isr":1,"transaction.state.log.replication.factor":1},"listeners":[{"authentication":{"type":"scram-sha-512"},"name":"plain","port":9092,"tls":false,"type":"internal"},{"authentication":{"type":"scram-sha-512"},"name":"tls","port":9093,"tls":true,"type":"internal"}],"replicas":1,"resources":{"limits":{"cpu":"1000m","memory":"4Gi"},"requests":{"cpu":"500m","memory":"2Gi"}},"storage":{"class":"local-path","size":"100Gi","type":"persistent-claim"},"version":"3.7.0"},"zookeeper":{"replicas":1,"resources":{"limits":{"cpu":"500m","memory":"1Gi"},"requests":{"cpu":"250m","memory":"512Mi"}},"storage":{"class":"local-path","size":"10Gi","type":"persistent-claim"}}}}
+    creationTimestamp: "2025-08-13T18:20:33Z"
+    generation: 1
+    name: mercurious-cluster
+    namespace: kafka
+    resourceVersion: "21883"
+    uid: f067a866-fba9-4155-a4d6-eeec0c95b6c8
+  spec:
+    entityOperator:
+      topicOperator:
+        resources:
+          limits:
+            cpu: 200m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 512Mi
+      userOperator:
+        resources:
+          limits:
+            cpu: 200m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 512Mi
+    kafka:
+      authorization:
+        type: simple
+      config:
+        default.replication.factor: 1
+        inter.broker.protocol.version: "3.7"
+        min.insync.replicas: 1
+        offsets.topic.replication.factor: 1
+        transaction.state.log.min.isr: 1
+        transaction.state.log.replication.factor: 1
+      listeners:
+      - authentication:
+          type: scram-sha-512
+        name: plain
+        port: 9092
+        tls: false
+        type: internal
+      - authentication:
+          type: scram-sha-512
+        name: tls
+        port: 9093
+        tls: true
+        type: internal
+      replicas: 1
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 4Gi
+        requests:
+          cpu: 500m
+          memory: 2Gi
+      storage:
+        class: local-path
+        size: 100Gi
+        type: persistent-claim
+      version: 3.7.0
+    zookeeper:
+      replicas: 1
+      resources:
+        limits:
+          cpu: 500m
+          memory: 1Gi
+        requests:
+          cpu: 250m
+          memory: 512Mi
+      storage:
+        class: local-path
+        size: 10Gi
+        type: persistent-claim
+  status:
+    clusterId: sqOWZTdzRwO1LRhQN8iDQw
+    conditions:
+    - lastTransitionTime: "2025-08-13T18:24:07.720195742Z"
+      status: "True"
+      type: Ready
+    kafkaMetadataState: ZooKeeper
+    kafkaVersion: 3.7.0
+    listeners:
+    - addresses:
+      - host: mercurious-cluster-kafka-bootstrap.kafka.svc
+        port: 9092
+      bootstrapServers: mercurious-cluster-kafka-bootstrap.kafka.svc:9092
+      name: plain
+    - addresses:
+      - host: mercurious-cluster-kafka-bootstrap.kafka.svc
+        port: 9093
+      bootstrapServers: mercurious-cluster-kafka-bootstrap.kafka.svc:9093
+      certificates:
+      - |
+        -----BEGIN CERTIFICATE-----
+        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
+        -----END CERTIFICATE-----
+      name: tls
+    observedGeneration: 1
+    operatorLastSuccessfulVersion: 0.43.0
+    registeredNodeIds:
+    - 0
+kind: List
+metadata:
+  resourceVersion: ""

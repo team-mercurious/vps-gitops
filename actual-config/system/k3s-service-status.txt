@@ -1,0 +1,55 @@
+● k3s.service - Lightweight Kubernetes
+     Loaded: loaded (/etc/systemd/system/k3s.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2025-08-13 16:25:31 UTC; 1 day 15h ago
+ Invocation: ad2a75937d124da7bdea3df73f6808b6
+       Docs: https://k3s.io
+    Process: 23167 ExecStartPre=/bin/sh -xc ! /usr/bin/systemctl is-enabled --quiet nm-cloud-setup.service 2>/dev/null (code=exited, status=0/SUCCESS)
+    Process: 23169 ExecStartPre=/sbin/modprobe br_netfilter (code=exited, status=0/SUCCESS)
+    Process: 23172 ExecStartPre=/sbin/modprobe overlay (code=exited, status=0/SUCCESS)
+   Main PID: 23176 (k3s-server)
+      Tasks: 512
+     Memory: 7.3G (peak: 9.4G)
+        CPU: 8h 21min 42.352s
+     CGroup: /system.slice/k3s.service
+             ├─  23176 "/usr/local/bin/k3s server"
+             ├─  23287 "containerd "
+             ├─  23892 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 7f2b32c7054e1e282c5c71a70a6b98547d84d9b1e4aa10fe36fefc15d0e5e1ab -address /run/k3s/containerd/containerd.sock
+             ├─  23994 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id d1550574673fc2fdfe56589efc93ac6b3e0c14ca51fca76d791b96bd9b1f718b -address /run/k3s/containerd/containerd.sock
+             ├─  24002 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id d8faaf34f4ba4372ad5fca373634e72fcc27fa92ea2e33b3b30a56941cbc3ead -address /run/k3s/containerd/containerd.sock
+             ├─  25115 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 0d1254b3458a5fe288177b2c6c866305ba0c8d1410047c8916ac473352b6d14a -address /run/k3s/containerd/containerd.sock
+             ├─  25224 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id f036cb9c52a841914f4f6a638496665ec33b42cea1156bb41a893b04806893f5 -address /run/k3s/containerd/containerd.sock
+             ├─  27002 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id b8ed243c12645ecc5ae3dec19dd4430f464016157b6d081722355dad6f851722 -address /run/k3s/containerd/containerd.sock
+             ├─  27039 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id facd04442e828d31b5746c714dd56e0114a4b16ec69a8bfc781982ab2d47da1f -address /run/k3s/containerd/containerd.sock
+             ├─  27053 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id e7ceea30e183ff1ce53c1625da0c7066955f4af00c125881d6a583a50c5884f9 -address /run/k3s/containerd/containerd.sock
+             ├─  28639 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 471afa9037e8ca39693386711af973a1b9eef4d7be0e48662730951ec753f6a9 -address /run/k3s/containerd/containerd.sock
+             ├─  28743 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 2011e65f0ead98e4a57999b23504302f9a04a543c3e1fbab7202485ec66086e2 -address /run/k3s/containerd/containerd.sock
+             ├─  28823 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 8b1c774af6bbedd99ed74bf84b0a86a8f9df3fef19ed34a5d35e5c5a865b7ea1 -address /run/k3s/containerd/containerd.sock
+             ├─  29556 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id b6c31472c60f69dc31270671f083cf8c80e3eb2f1c83e8a88324850622d9a873 -address /run/k3s/containerd/containerd.sock
+             ├─  30279 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 4896c16de71c63773b7865ea885fa1ef2957204bbc096f4426460716a0719be9 -address /run/k3s/containerd/containerd.sock
+             ├─  30531 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 09806e8f6d6424885a2e986488cde7da1abf58a5d417e7b262cbc7f128a205d8 -address /run/k3s/containerd/containerd.sock
+             ├─  31172 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 384a708e13aa7332742ee9c63f0fca4616855f6d4fff26001c369922f799f376 -address /run/k3s/containerd/containerd.sock
+             ├─  31630 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id e17fd8f0a390d4a9e0ed40ac6b58528ba80223ac04a863ff65d3b73c1530ae0d -address /run/k3s/containerd/containerd.sock
+             ├─  33706 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 583245876ffb3ee8eb74bceaa01668c8fb3a00cde595ee27e3e050e7e1253666 -address /run/k3s/containerd/containerd.sock
+             ├─  33736 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 098e9408ab52db5acaac15d072e65cccfb5d6c70c090dcfca8315f953417eb7c -address /run/k3s/containerd/containerd.sock
+             ├─  33872 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 7e5a1f21ea9a438b06da468f301a0f7258e27b49d11d15d118dc68e1715fafa1 -address /run/k3s/containerd/containerd.sock
+             ├─  33946 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id a7cd9533a45df50069eeef3bde23a3678d21f6e2491b7ccde55dc772badd7beb -address /run/k3s/containerd/containerd.sock
+             ├─  33950 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 47f540852bb174234ae32f9b967376e7c2de5a0beb9e31513cfaddb25d39682b -address /run/k3s/containerd/containerd.sock
+             ├─  34044 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 6546ee10b710e91b1279d380c187e269bd2ffb47e17be413f0b1e59ec946e1f2 -address /run/k3s/containerd/containerd.sock
+             ├─  75525 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 265306502c09beed44effeaa48e5992e1e3e64d6fa842de14612e23e1e7b2e69 -address /run/k3s/containerd/containerd.sock
+             ├─ 116888 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 26ac36426535352f5d22f5fc6858e8319b2898e04b968223c4d418b4cfe37e05 -address /run/k3s/containerd/containerd.sock
+             ├─ 118364 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 98a22974243cb89ae761c2628cdda52fe7ac56984411b5836206d57522edf902 -address /run/k3s/containerd/containerd.sock
+             ├─ 119605 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id df79b96a0587933a49b011c392eaa6ae284313dc99d31f69f924123a4e4b2ac8 -address /run/k3s/containerd/containerd.sock
+             ├─1354952 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 7fe2d5030d02da44004e8628c0b5cb597dcc1158af5a5edcf0e83ffc3d3d542d -address /run/k3s/containerd/containerd.sock
+             ├─1355008 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id fd1ea5ce889c7888e3f808c8d16e87d48f0e6d62726a98eb9bd0d34823dc227e -address /run/k3s/containerd/containerd.sock
+             └─1355010 /var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56/bin/containerd-shim-runc-v2 -namespace k8s.io -id 7572cc95c6e25b9b5a52c8095840cfc239f3b484a1ec118135ff39a29429c798 -address /run/k3s/containerd/containerd.sock
+
+Aug 15 07:50:28 vps-6227e9e1 k3s[23176]: time="2025-08-15T07:50:28Z" level=info msg="COMPACT compactRev=348741 targetCompactRev=349451 currentRev=350451"
+Aug 15 07:50:28 vps-6227e9e1 k3s[23176]: time="2025-08-15T07:50:28Z" level=info msg="COMPACT deleted 711 rows from 710 revisions in 36.209738ms - compacted to 349451/350451"
+Aug 15 07:55:28 vps-6227e9e1 k3s[23176]: time="2025-08-15T07:55:28Z" level=info msg="COMPACT compactRev=349451 targetCompactRev=350159 currentRev=351159"
+Aug 15 07:55:28 vps-6227e9e1 k3s[23176]: time="2025-08-15T07:55:28Z" level=info msg="COMPACT deleted 708 rows from 708 revisions in 29.566803ms - compacted to 350159/351159"
+Aug 15 08:00:28 vps-6227e9e1 k3s[23176]: time="2025-08-15T08:00:28Z" level=info msg="COMPACT compactRev=350159 targetCompactRev=350866 currentRev=351866"
+Aug 15 08:00:28 vps-6227e9e1 k3s[23176]: time="2025-08-15T08:00:28Z" level=info msg="COMPACT deleted 707 rows from 707 revisions in 10.33935ms - compacted to 350866/351866"
+Aug 15 08:05:28 vps-6227e9e1 k3s[23176]: time="2025-08-15T08:05:28Z" level=info msg="COMPACT compactRev=350866 targetCompactRev=351567 currentRev=352567"
+Aug 15 08:05:28 vps-6227e9e1 k3s[23176]: time="2025-08-15T08:05:28Z" level=info msg="COMPACT deleted 700 rows from 701 revisions in 27.291146ms - compacted to 351567/352567"
+Aug 15 08:10:28 vps-6227e9e1 k3s[23176]: time="2025-08-15T08:10:28Z" level=info msg="COMPACT compactRev=351567 targetCompactRev=352282 currentRev=353282"
+Aug 15 08:10:28 vps-6227e9e1 k3s[23176]: time="2025-08-15T08:10:28Z" level=info msg="COMPACT deleted 716 rows from 715 revisions in 23.397813ms - compacted to 352282/353282"

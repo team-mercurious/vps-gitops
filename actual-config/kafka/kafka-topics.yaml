@@ -1,0 +1,305 @@
+apiVersion: v1
+items:
+- apiVersion: kafka.strimzi.io/v1beta2
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"mercurious-cluster"},"name":"api-events","namespace":"kafka"},"spec":{"config":{"retention.ms":604800000,"segment.ms":86400000},"partitions":3,"replicas":1}}
+    creationTimestamp: "2025-08-13T16:34:24Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      strimzi.io/cluster: mercurious-cluster
+    name: api-events
+    namespace: kafka
+    resourceVersion: "21154"
+    uid: 7790f99f-6b72-4a4f-981c-5f192fd0a52a
+  spec:
+    config:
+      retention.ms: 604800000
+      segment.ms: 86400000
+    partitions: 3
+    replicas: 1
+  status:
+    conditions:
+    - lastTransitionTime: "2025-08-13T17:56:56.828581044Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: AUtSm9bgQBKnP7-9rystkQ
+    topicName: api-events
+- apiVersion: kafka.strimzi.io/v1beta2
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"mercurious-cluster"},"name":"travel-proposal-request","namespace":"kafka"},"spec":{"config":{"retention.ms":604800000,"segment.ms":86400000},"partitions":3,"replicas":1}}
+    creationTimestamp: "2025-08-13T21:41:15Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      strimzi.io/cluster: mercurious-cluster
+    name: travel-proposal-request
+    namespace: kafka
+    resourceVersion: "51983"
+    uid: a2413dda-3e99-476c-886d-4ac73808192f
+  spec:
+    config:
+      retention.ms: 604800000
+      segment.ms: 86400000
+    partitions: 3
+    replicas: 1
+  status:
+    conditions:
+    - lastTransitionTime: "2025-08-13T21:41:18.745616534Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: oa7HVp8dR8i9xLHcXQjeEA
+    topicName: travel-proposal-request
+- apiVersion: kafka.strimzi.io/v1beta2
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"mercurious-cluster"},"name":"travel-enrichment-request","namespace":"kafka"},"spec":{"config":{"retention.ms":604800000,"segment.ms":86400000},"partitions":3,"replicas":1}}
+    creationTimestamp: "2025-08-13T21:41:15Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      strimzi.io/cluster: mercurious-cluster
+    name: travel-enrichment-request
+    namespace: kafka
+    resourceVersion: "51984"
+    uid: 21e65862-f1af-4e5e-9c99-59114ee66e0d
+  spec:
+    config:
+      retention.ms: 604800000
+      segment.ms: 86400000
+    partitions: 3
+    replicas: 1
+  status:
+    conditions:
+    - lastTransitionTime: "2025-08-13T21:41:19.089571606Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: jju-IrxYQW6t9T_WzVjBiQ
+    topicName: travel-enrichment-request
+- apiVersion: kafka.strimzi.io/v1beta2
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"mercurious-cluster"},"name":"travel-generation-request","namespace":"kafka"},"spec":{"config":{"retention.ms":604800000,"segment.ms":86400000},"partitions":3,"replicas":1}}
+    creationTimestamp: "2025-08-13T21:41:15Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      strimzi.io/cluster: mercurious-cluster
+    name: travel-generation-request
+    namespace: kafka
+    resourceVersion: "51985"
+    uid: 3197794f-002a-4368-8132-23d1e87aa918
+  spec:
+    config:
+      retention.ms: 604800000
+      segment.ms: 86400000
+    partitions: 3
+    replicas: 1
+  status:
+    conditions:
+    - lastTransitionTime: "2025-08-13T21:41:19.382553416Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: ghmGup1UQ8CmBeA4In_uig
+    topicName: travel-generation-request
+- apiVersion: kafka.strimzi.io/v1beta2
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"mercurious-cluster"},"name":"travel-generation-progress","namespace":"kafka"},"spec":{"config":{"retention.ms":604800000,"segment.ms":86400000},"partitions":3,"replicas":1}}
+    creationTimestamp: "2025-08-13T21:41:15Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      strimzi.io/cluster: mercurious-cluster
+    name: travel-generation-progress
+    namespace: kafka
+    resourceVersion: "51995"
+    uid: d9623246-8755-4158-a60d-5896b0bdde64
+  spec:
+    config:
+      retention.ms: 604800000
+      segment.ms: 86400000
+    partitions: 3
+    replicas: 1
+  status:
+    conditions:
+    - lastTransitionTime: "2025-08-13T21:41:20.641355551Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: 1lahgeyLTW6eGOnR_RZALQ
+    topicName: travel-generation-progress
+- apiVersion: kafka.strimzi.io/v1beta2
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"mercurious-cluster"},"name":"travel-proposal-completed","namespace":"kafka"},"spec":{"config":{"retention.ms":604800000,"segment.ms":86400000},"partitions":3,"replicas":1}}
+    creationTimestamp: "2025-08-13T21:41:15Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      strimzi.io/cluster: mercurious-cluster
+    name: travel-proposal-completed
+    namespace: kafka
+    resourceVersion: "51996"
+    uid: eb35ea7b-c28c-46f1-a6d0-7752ca22d98e
+  spec:
+    config:
+      retention.ms: 604800000
+      segment.ms: 86400000
+    partitions: 3
+    replicas: 1
+  status:
+    conditions:
+    - lastTransitionTime: "2025-08-13T21:41:20.786999837Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: okWSr99STc-_RytEQu_d3g
+    topicName: travel-proposal-completed
+- apiVersion: kafka.strimzi.io/v1beta2
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"mercurious-cluster"},"name":"travel-enrichment-completed","namespace":"kafka"},"spec":{"config":{"retention.ms":604800000,"segment.ms":86400000},"partitions":3,"replicas":1}}
+    creationTimestamp: "2025-08-13T21:41:15Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      strimzi.io/cluster: mercurious-cluster
+    name: travel-enrichment-completed
+    namespace: kafka
+    resourceVersion: "51998"
+    uid: 02be0316-e3a1-4977-a892-bacbf597d21e
+  spec:
+    config:
+      retention.ms: 604800000
+      segment.ms: 86400000
+    partitions: 3
+    replicas: 1
+  status:
+    conditions:
+    - lastTransitionTime: "2025-08-13T21:41:20.983053190Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: Y0dbpo0RSwaQWxPw3JcZaA
+    topicName: travel-enrichment-completed
+- apiVersion: kafka.strimzi.io/v1beta2
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"mercurious-cluster"},"name":"travel-generation-completed","namespace":"kafka"},"spec":{"config":{"retention.ms":604800000,"segment.ms":86400000},"partitions":3,"replicas":1}}
+    creationTimestamp: "2025-08-13T21:41:15Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      strimzi.io/cluster: mercurious-cluster
+    name: travel-generation-completed
+    namespace: kafka
+    resourceVersion: "52000"
+    uid: 4e4d6f4c-708b-42c8-8a01-93ac51d54d80
+  spec:
+    config:
+      retention.ms: 604800000
+      segment.ms: 86400000
+    partitions: 3
+    replicas: 1
+  status:
+    conditions:
+    - lastTransitionTime: "2025-08-13T21:41:21.183474635Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: p1M1eB8yQ8KfKYfwClHr7w
+    topicName: travel-generation-completed
+- apiVersion: kafka.strimzi.io/v1beta2
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"mercurious-cluster"},"name":"travel-enrichment-progress","namespace":"kafka"},"spec":{"config":{"retention.ms":604800000,"segment.ms":86400000},"partitions":3,"replicas":1}}
+    creationTimestamp: "2025-08-13T21:41:15Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      strimzi.io/cluster: mercurious-cluster
+    name: travel-enrichment-progress
+    namespace: kafka
+    resourceVersion: "52001"
+    uid: 4b66f3f8-122e-4fd8-89a1-753c209462e6
+  spec:
+    config:
+      retention.ms: 604800000
+      segment.ms: 86400000
+    partitions: 3
+    replicas: 1
+  status:
+    conditions:
+    - lastTransitionTime: "2025-08-13T21:41:21.389628983Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: lIiEwdtwRD-yhBilxCbGEg
+    topicName: travel-enrichment-progress
+- apiVersion: kafka.strimzi.io/v1beta2
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"mercurious-cluster"},"name":"travel-proposal-progress","namespace":"kafka"},"spec":{"config":{"retention.ms":604800000,"segment.ms":86400000},"partitions":3,"replicas":1}}
+    creationTimestamp: "2025-08-13T21:41:15Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      strimzi.io/cluster: mercurious-cluster
+    name: travel-proposal-progress
+    namespace: kafka
+    resourceVersion: "52004"
+    uid: 13b72dc5-5846-4409-bfe0-890cc6f4b7a5
+  spec:
+    config:
+      retention.ms: 604800000
+      segment.ms: 86400000
+    partitions: 3
+    replicas: 1
+  status:
+    conditions:
+    - lastTransitionTime: "2025-08-13T21:41:21.497422222Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: Q38_psMcTQGO6NtALp7IQw
+    topicName: travel-proposal-progress
+kind: List
+metadata:
+  resourceVersion: ""

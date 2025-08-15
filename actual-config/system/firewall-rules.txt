@@ -1,0 +1,21 @@
+# Configuration UFW actuelle (2025-08-15)
+
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW       Anywhere                  
+80/tcp                     ALLOW       Anywhere                  
+443/tcp                     ALLOW       Anywhere                  
+6443/tcp                   ALLOW       Anywhere                  
+22/tcp (v6)                ALLOW       Anywhere (v6)             
+80/tcp (v6)                ALLOW       Anywhere (v6)             
+443/tcp (v6)               ALLOW       Anywhere (v6)             
+6443/tcp (v6)              ALLOW       Anywhere (v6)
+
+# Commandes pour reproduire cette configuration :
+# sudo ufw enable
+# sudo ufw allow 22/tcp
+# sudo ufw allow 80/tcp  
+# sudo ufw allow 443/tcp
+# sudo ufw allow 6443/tcp

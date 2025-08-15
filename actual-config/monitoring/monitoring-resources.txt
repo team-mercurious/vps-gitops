@@ -1,0 +1,41 @@
+NAME                                                            READY   STATUS    RESTARTS   AGE
+pod/kube-prometheus-stack-operator-84bb84b56b-lp5th             1/1     Running   0          39h
+pod/kube-prometheus-stack-prometheus-node-exporter-62sjs        1/1     Running   0          39h
+pod/kube-prometheus-stack-kube-state-metrics-66bbcbc545-ldj4r   1/1     Running   0          39h
+pod/alertmanager-kube-prometheus-stack-alertmanager-0           2/2     Running   0          39h
+pod/prometheus-kube-prometheus-stack-prometheus-0               2/2     Running   0          39h
+pod/loki-promtail-5jlp2                                         1/1     Running   0          39h
+pod/kube-prometheus-stack-grafana-569c787945-tkc4p              3/3     Running   0          39h
+pod/loki-0                                                      1/1     Running   0          39h
+
+NAME                                                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+service/kube-prometheus-stack-kube-state-metrics         ClusterIP   10.43.57.186    <none>        8080/TCP                     39h
+service/kube-prometheus-stack-prometheus-node-exporter   ClusterIP   10.43.22.54     <none>        9100/TCP                     39h
+service/kube-prometheus-stack-prometheus                 ClusterIP   10.43.64.67     <none>        9090/TCP,8080/TCP            39h
+service/kube-prometheus-stack-grafana                    ClusterIP   10.43.180.248   <none>        80/TCP                       39h
+service/kube-prometheus-stack-alertmanager               ClusterIP   10.43.44.87     <none>        9093/TCP,8080/TCP            39h
+service/kube-prometheus-stack-operator                   ClusterIP   10.43.129.144   <none>        443/TCP                      39h
+service/alertmanager-operated                            ClusterIP   None            <none>        9093/TCP,9094/TCP,9094/UDP   39h
+service/prometheus-operated                              ClusterIP   None            <none>        9090/TCP                     39h
+service/loki-memberlist                                  ClusterIP   None            <none>        7946/TCP                     39h
+service/loki-headless                                    ClusterIP   None            <none>        3100/TCP                     39h
+service/loki                                             ClusterIP   10.43.227.122   <none>        3100/TCP                     39h
+
+NAME                                                            DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+daemonset.apps/kube-prometheus-stack-prometheus-node-exporter   1         1         1       1            1           kubernetes.io/os=linux   39h
+daemonset.apps/loki-promtail                                    1         1         1       1            1           <none>                   39h
+
+NAME                                                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/kube-prometheus-stack-operator             1/1     1            1           39h
+deployment.apps/kube-prometheus-stack-kube-state-metrics   1/1     1            1           39h
+deployment.apps/kube-prometheus-stack-grafana              1/1     1            1           39h
+
+NAME                                                                  DESIRED   CURRENT   READY   AGE
+replicaset.apps/kube-prometheus-stack-operator-84bb84b56b             1         1         1       39h
+replicaset.apps/kube-prometheus-stack-kube-state-metrics-66bbcbc545   1         1         1       39h
+replicaset.apps/kube-prometheus-stack-grafana-569c787945              1         1         1       39h
+
+NAME                                                               READY   AGE
+statefulset.apps/alertmanager-kube-prometheus-stack-alertmanager   1/1     39h
+statefulset.apps/prometheus-kube-prometheus-stack-prometheus       1/1     39h
+statefulset.apps/loki                                              1/1     39h

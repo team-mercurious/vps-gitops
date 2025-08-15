@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+  CLIENT_DEV_URL: http://localhost:3000
+  CLIENT_FRONT_URL: https://gotravelyzer.com
+  CLIENT_PLANNER_URL: https://ia.gotravelyzer.com
+  DATABASE_URL: mongodb+srv://travelyzer:518rqBWG1rV4ZvKK@travelyzer-prod.26knsae.mongodb.net/db?retryWrites=true&w=majority&appName=Cluster0
+  MONGO_URI: mongodb+srv://travelyzer:518rqBWG1rV4ZvKK@travelyzer-prod.26knsae.mongodb.net/db?retryWrites=true&w=majority&appName=Cluster0
+  MONGO_URL: mongodb+srv://travelyzer:518rqBWG1rV4ZvKK@travelyzer-prod.26knsae.mongodb.net/db?retryWrites=true&w=majority&appName=Cluster0
+  NODE_ENV: production
+  REDIS_HOST: redis-18853.c327.europe-west1-2.gce.redns.redis-cloud.com
+  REDIS_PASSWORD: igZR5Qq#xq5gUh
+  REDIS_PORT: "18853"
+  REDIS_URL: redis://admin:igZR5Qq%23xq5gUh@redis-18853.c327.europe-west1-2.gce.redns.redis-cloud.com:18853
+  REDIS_USERNAME: admin
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"CLIENT_DEV_URL":"http://localhost:3000","CLIENT_FRONT_URL":"https://gotravelyzer.com","CLIENT_PLANNER_URL":"https://ia.gotravelyzer.com","DATABASE_URL":"mongodb+srv://travelyzer:518rqBWG1rV4ZvKK@travelyzer-prod.26knsae.mongodb.net/db?retryWrites=true\u0026w=majority\u0026appName=Cluster0","MONGO_URI":"mongodb+srv://travelyzer:518rqBWG1rV4ZvKK@travelyzer-prod.26knsae.mongodb.net/db?retryWrites=true\u0026w=majority\u0026appName=Cluster0","MONGO_URL":"mongodb+srv://travelyzer:518rqBWG1rV4ZvKK@travelyzer-prod.26knsae.mongodb.net/db?retryWrites=true\u0026w=majority\u0026appName=Cluster0","NODE_ENV":"production","REDIS_HOST":"redis-18853.c327.europe-west1-2.gce.redns.redis-cloud.com","REDIS_PASSWORD":"igZR5Qq#xq5gUh","REDIS_PORT":"18853","REDIS_URL":"redis://admin:igZR5Qq%23xq5gUh@redis-18853.c327.europe-west1-2.gce.redns.redis-cloud.com:18853","REDIS_USERNAME":"admin"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"microservices-config","namespace":"default"}}
+  creationTimestamp: "2025-08-13T21:10:56Z"
+  name: microservices-config
+  namespace: default
+  resourceVersion: "53047"
+  uid: 99135d74-5f7e-4a79-b5b9-20a04dc94c41

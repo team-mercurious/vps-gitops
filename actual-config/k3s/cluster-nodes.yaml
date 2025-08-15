@@ -1,0 +1,288 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      alpha.kubernetes.io/provided-node-ip: 37.59.98.241,2001:41d0:304:200::233d
+      flannel.alpha.coreos.com/backend-data: '{"VNI":1,"VtepMAC":"ba:c0:3b:91:8d:35"}'
+      flannel.alpha.coreos.com/backend-type: vxlan
+      flannel.alpha.coreos.com/kube-subnet-manager: "true"
+      flannel.alpha.coreos.com/public-ip: 37.59.98.241
+      k3s.io/hostname: vps-6227e9e1
+      k3s.io/internal-ip: 37.59.98.241,2001:41d0:304:200::233d
+      k3s.io/node-args: '["server"]'
+      k3s.io/node-config-hash: YMO2DEL2Q5MFBX3LIXGD6UT7GJ3EURAUVDR245U7MT6WJYMFDW5Q====
+      k3s.io/node-env: '{"K3S_DATA_DIR":"/var/lib/rancher/k3s/data/28f7e87eba734b7f7731dc900e2c84e0e98ce869f3dcf57f65dc7bbb80e12e56","K3S_KUBECONFIG_MODE":"644"}'
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2025-08-13T16:25:30Z"
+    finalizers:
+    - wrangler.cattle.io/node
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/instance-type: k3s
+      beta.kubernetes.io/os: linux
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: vps-6227e9e1
+      kubernetes.io/os: linux
+      node-role.kubernetes.io/control-plane: "true"
+      node-role.kubernetes.io/master: "true"
+      node.kubernetes.io/instance-type: k3s
+    name: vps-6227e9e1
+    resourceVersion: "353177"
+    uid: 209f9e18-7a50-4ce2-8241-6aac3dd69434
+  spec:
+    podCIDR: 10.42.0.0/24
+    podCIDRs:
+    - 10.42.0.0/24
+    providerID: k3s://vps-6227e9e1
+  status:
+    addresses:
+    - address: 37.59.98.241
+      type: InternalIP
+    - address: 2001:41d0:304:200::233d
+      type: InternalIP
+    - address: vps-6227e9e1
+      type: Hostname
+    allocatable:
+      cpu: "16"
+      ephemeral-storage: "157138843116"
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      memory: 15985112Ki
+      pods: "110"
+    capacity:
+      cpu: "16"
+      ephemeral-storage: 161532528Ki
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      memory: 15985112Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2025-08-15T08:09:44Z"
+      lastTransitionTime: "2025-08-13T16:25:30Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2025-08-15T08:09:44Z"
+      lastTransitionTime: "2025-08-13T16:25:30Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2025-08-15T08:09:44Z"
+      lastTransitionTime: "2025-08-13T16:25:30Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2025-08-15T08:09:44Z"
+      lastTransitionTime: "2025-08-13T16:25:31Z"
+      message: kubelet is posting ready status. AppArmor enabled
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - docker.io/confluentinc/cp-kafka@sha256:9cdc8119cb39c45f0efa6da8e2220058020c7433e3ba3a3ce11a8006a18cb336
+      - docker.io/confluentinc/cp-kafka:latest
+      sizeBytes: 557617816
+    - names:
+      - docker.io/confluentinc/cp-kafka@sha256:187dac6627e7906c350f5f8c982f80ce735ff1a0e571a20de6000a309a12ce63
+      - docker.io/confluentinc/cp-kafka:7.4.0
+      sizeBytes: 438237431
+    - names:
+      - quay.io/strimzi/kafka@sha256:b2f4e8895e9ed66228512ce14aec685101fa75dc329128d47cb1c15e3aef3c9c
+      - quay.io/strimzi/kafka:0.43.0-kafka-3.8.0
+      sizeBytes: 363182972
+    - names:
+      - quay.io/strimzi/kafka@sha256:d27cf5bf3624e18ba705246b14f92d12b8a15eb8551b13abf027cf71b549baf0
+      - quay.io/strimzi/kafka:0.43.0-kafka-3.7.0
+      sizeBytes: 361474436
+    - names:
+      - docker.io/grafana/grafana@sha256:6ac590e7cabc2fbe8d7b8fc1ce9c9f0582177b334e0df9c927ebd9670469440f
+      - docker.io/grafana/grafana:12.1.0
+      sizeBytes: 201268200
+    - names:
+      - quay.io/strimzi/operator@sha256:589c4d63641d9a944462dd682f6e5febe8b38ff55b9253949b061aca16feb154
+      - quay.io/strimzi/operator:0.47.0
+      sizeBytes: 200592938
+    - names:
+      - quay.io/strimzi/operator@sha256:d3732245f34afaa6b571f1f912e1cd017891b22003d6367ae8ca059b2a5cb13c
+      - quay.io/strimzi/operator:0.43.0
+      sizeBytes: 195686868
+    - names:
+      - ghcr.io/team-mercurious/api-gateway@sha256:6dc0f6c662e5afb6e91efcad1d962f704f0bd65f5304c46b77f42d1385eb61f1
+      - ghcr.io/team-mercurious/api-gateway:latest
+      sizeBytes: 142631158
+    - names:
+      - ghcr.io/team-mercurious/api-gateway@sha256:b32afb39c4760feef7ae3d98af1d8b3732e2b2e49a217ced39597d4c2da7dba3
+      sizeBytes: 142628867
+    - names:
+      - ghcr.io/team-mercurious/api-gateway@sha256:74d9546b6e5543e3c79b9a9615ad026b788e31e7b5c9ab8b76f8b863939b6722
+      - ghcr.io/team-mercurious/api-gateway:sha-ef49514f708d4006e08619a928d1f5275fa09e86
+      sizeBytes: 142628065
+    - names:
+      - quay.io/prometheus/prometheus@sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996
+      - quay.io/prometheus/prometheus:v3.5.0
+      sizeBytes: 123797512
+    - names:
+      - ghcr.io/team-mercurious/api-generation@sha256:1ede3223c92e063c0ab92671ef39f1c7d18d9a656abc5236396245b84c5898c7
+      - ghcr.io/team-mercurious/api-generation:latest
+      sizeBytes: 111125940
+    - names:
+      - ghcr.io/team-mercurious/api-generation@sha256:53bfb120e7fd201accac781ec550abda5ea155e1e74b14fb6e9a814084394c9e
+      sizeBytes: 111125741
+    - names:
+      - ghcr.io/team-mercurious/api-enrichment@sha256:00fe8262520a5317334c31ac9f01ef44e2c0974ce7280f7b5dc7a2ba6f6b3ec4
+      sizeBytes: 110523797
+    - names:
+      - ghcr.io/team-mercurious/api-enrichment@sha256:d179fa2701df7bc013df25cf82fda667c496feb28247fe6dabc1f163c1c9d730
+      - ghcr.io/team-mercurious/api-enrichment:latest
+      sizeBytes: 110522293
+    - names:
+      - docker.io/rancher/klipper-helm@sha256:b0b0c4f73f2391697edb52adffe4fc490de1c8590606024515bb906b2813554a
+      - docker.io/rancher/klipper-helm:v0.8.2-build20230815
+      sizeBytes: 90877642
+    - names:
+      - docker.io/grafana/promtail@sha256:b338a29de45ef8ffa96f882f3a36306b1e61262b2a560ff523e0e2633cccbbc4
+      - docker.io/grafana/promtail:2.9.3
+      sizeBytes: 75094050
+    - names:
+      - ghcr.io/fluxcd/kustomize-controller@sha256:1a50730537bafb7827365b9af95c4eb71ca3d9b0bed9bc9bc765880e976972ef
+      - ghcr.io/fluxcd/kustomize-controller:v1.6.1
+      sizeBytes: 67373776
+    - names:
+      - ghcr.io/fluxcd/source-controller@sha256:11c8e14df885eff86586533d9941293ec8a1e9fff71bacf119edc79fdf3c63e3
+      - ghcr.io/fluxcd/source-controller:v1.6.2
+      sizeBytes: 63804109
+    - names:
+      - ghcr.io/fluxcd/notification-controller@sha256:80174ff676407af7a6feff67b0c2f100de9f7f89df4c26fc871e4d4c4006544d
+      - ghcr.io/fluxcd/notification-controller:v1.6.0
+      sizeBytes: 49367374
+    - names:
+      - docker.io/library/node@sha256:df02558528d3d3d0d621f112e232611aecfee7cbc654f6b375765f72bb262799
+      - docker.io/library/node:20-alpine
+      sizeBytes: 48065534
+    - names:
+      - docker.io/rancher/mirrored-library-traefik@sha256:ca9c8fbe001070c546a75184e3fd7f08c3e47dfc1e89bff6fe2edd302accfaec
+      - docker.io/rancher/mirrored-library-traefik:2.10.5
+      sizeBytes: 43142359
+    - names:
+      - ghcr.io/fluxcd/helm-controller@sha256:db55d9d9f9b5106acd8c21da6916b8e285fcfc5572f214361ececd1a8571a4f0
+      - ghcr.io/fluxcd/helm-controller:v1.3.0
+      sizeBytes: 42587139
+    - names:
+      - ghcr.io/fluxcd/image-reflector-controller@sha256:4df89798b23a1ba7ec86bab327dcb50417af1517fe7986e511e28f62f40b8f61
+      - ghcr.io/fluxcd/image-reflector-controller:v0.35.2
+      sizeBytes: 40677230
+    - names:
+      - quay.io/prometheus/alertmanager@sha256:27c475db5fb156cab31d5c18a4251ac7ed567746a2483ff264516437a39b15ba
+      - quay.io/prometheus/alertmanager:v0.28.1
+      sizeBytes: 35015543
+    - names:
+      - docker.io/rancher/mirrored-metrics-server@sha256:c2dfd72bafd6406ed306d9fbd07f55c496b004293d13d3de88a4567eacc36558
+      - docker.io/rancher/mirrored-metrics-server:v0.6.3
+      sizeBytes: 29943298
+    - names:
+      - registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:e63459ec5965840af34d6d6a2f4c017eb6e212db83e054908d0bd148e1f35489
+      - registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.1
+      sizeBytes: 28427317
+    - names:
+      - ghcr.io/fluxcd/image-automation-controller@sha256:e5b90e065e0d91690dbcd83dab3d03207ed030b068e26e9dac88c8d7b4fdfbe4
+      - ghcr.io/fluxcd/image-automation-controller:v0.41.2
+      sizeBytes: 24602001
+    - names:
+      - quay.io/kiwigrid/k8s-sidecar@sha256:49dcce269568b1645b0050f296da787c99119647965229919a136614123f0627
+      - quay.io/kiwigrid/k8s-sidecar:1.30.3
+      sizeBytes: 22552493
+    - names:
+      - docker.io/library/nginx@sha256:5a14017678e59c5310ca52277507c160a3ac5c5c8bdff99891a468beb794f10a
+      - docker.io/library/nginx:alpine
+      sizeBytes: 22477192
+    - names:
+      - docker.io/library/nginx@sha256:d67ea0d64d518b1bb04acde3b00f722ac3e9764b3209a9b0a98924ba35e4b779
+      sizeBytes: 22414794
+    - names:
+      - docker.io/grafana/loki@sha256:1ee60f980950b00e505bd564b40f720132a0653b110e993043bb5940673d060a
+      - docker.io/grafana/loki:2.6.1
+      sizeBytes: 20094464
+    - names:
+      - quay.io/prometheus-operator/prometheus-operator@sha256:07e77b3801a43716966529504b81f8883a8a753abfc0def4cb6ec33098155b06
+      - quay.io/prometheus-operator/prometheus-operator:v0.84.1
+      sizeBytes: 19561359
+    - names:
+      - quay.io/jetstack/cert-manager-controller@sha256:2121d4250f5734ee097df243507d06536fc264140dba3425045a825ef597c79d
+      - quay.io/jetstack/cert-manager-controller:v1.13.3
+      sizeBytes: 19303009
+    - names:
+      - registry.k8s.io/kube-state-metrics/kube-state-metrics@sha256:e750cd4b43f782e3106537026c2995cac85d921aedea334e1d16caad7877c360
+      - registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.16.0
+      sizeBytes: 18382550
+    - names:
+      - quay.io/jetstack/cert-manager-ctl@sha256:d0d12f721e01b19973c989646c96905bfca7a0ea5f7888d5e9b4adabb4fbc56c
+      - quay.io/jetstack/cert-manager-ctl:v1.13.3
+      sizeBytes: 18085755
+    - names:
+      - docker.io/rancher/mirrored-coredns-coredns@sha256:a11fafae1f8037cbbd66c5afa40ba2423936b72b4fd50a7034a7e8b955163594
+      - docker.io/rancher/mirrored-coredns-coredns:1.10.1
+      sizeBytes: 16190137
+    - names:
+      - quay.io/jetstack/cert-manager-webhook@sha256:f45b21f770bf4676c732f19e2ef17c34f46ac75873a5e0aa25703d808b2e5566
+      - quay.io/jetstack/cert-manager-webhook:v1.13.3
+      sizeBytes: 15252591
+    - names:
+      - quay.io/prometheus-operator/prometheus-config-reloader@sha256:f9e2a3b8550b0b643c285fc45132fde845910012db6d850d3e04dd462db037b4
+      - quay.io/prometheus-operator/prometheus-config-reloader:v0.84.1
+      sizeBytes: 15115623
+    - names:
+      - docker.io/rancher/local-path-provisioner@sha256:5bb33992a4ec3034c28b5e0b3c4c2ac35d3613b25b79455eb4b1a95adc82cdc0
+      - docker.io/rancher/local-path-provisioner:v0.0.24
+      sizeBytes: 14887612
+    - names:
+      - quay.io/jetstack/cert-manager-cainjector@sha256:ac5154525f99bd0872671613741aac1b7dcb9c0df988571a7618155ddb6fabd2
+      - quay.io/jetstack/cert-manager-cainjector:v1.13.3
+      sizeBytes: 13448730
+    - names:
+      - quay.io/prometheus/node-exporter@sha256:d00a542e409ee618a4edc67da14dd48c5da66726bbd5537ab2af9c1dfc442c8a
+      - quay.io/prometheus/node-exporter:v1.9.1
+      sizeBytes: 12955907
+    - names:
+      - quay.io/jetstack/cert-manager-acmesolver@sha256:b1aa36468479fc5ca1a847f9e7cd1dc21978f273d9cec1d4202a632be9d26fad
+      - quay.io/jetstack/cert-manager-acmesolver:v1.13.3
+      sizeBytes: 10564197
+    - names:
+      - docker.io/rancher/klipper-lb@sha256:d6780e97ac25454b56f88410b236d52572518040f11d0db5c6baaac0d2fcf860
+      - docker.io/rancher/klipper-lb:v0.4.4
+      sizeBytes: 4921566
+    - names:
+      - docker.io/rancher/mirrored-library-busybox@sha256:8a45424ddf949bbe9bb3231b05f9032a45da5cd036eb4867b511b00734756d6f
+      - docker.io/rancher/mirrored-library-busybox:1.36.1
+      sizeBytes: 2147340
+    - names:
+      - docker.io/library/busybox@sha256:95cf004f559831017cdf4628aaf1bb30133677be8702a8c5f2994629f637a209
+      - docker.io/library/busybox:1.31.1
+      sizeBytes: 764556
+    - names:
+      - docker.io/rancher/mirrored-pause@sha256:74c4244427b7312c5b901fe0f67cbc53683d06f4f24c6faee65d4182bf0fa893
+      - docker.io/rancher/mirrored-pause:3.6
+      sizeBytes: 301463
+    nodeInfo:
+      architecture: amd64
+      bootID: 596ecb43-c612-4c22-8014-79eefd77df5f
+      containerRuntimeVersion: containerd://1.7.11-k3s2
+      kernelVersion: 6.11.0-19-generic
+      kubeProxyVersion: v1.28.5+k3s1
+      kubeletVersion: v1.28.5+k3s1
+      machineID: 3078ed51736449afad8a9eab3eaeb53e
+      operatingSystem: linux
+      osImage: Ubuntu 24.10
+      systemUUID: 3078ed51-7364-49af-ad8a-9eab3eaeb53e
+kind: List
+metadata:
+  resourceVersion: ""
