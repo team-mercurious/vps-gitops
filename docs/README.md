@@ -33,6 +33,9 @@ DNS, routage, services Kubernetes, load balancing et troubleshooting réseau.
 Configuration UFW, Fail2Ban, ports exposés, certificats TLS et surveillance sécurité.
 
 ### 🚀 Opérations
+#### [⭐ Déploiement Automatique](operations/automatic-deployment.md) **NOUVEAU**
+Système complet de déploiement automatique GitOps avec surveillance cron, zero-downtime et traçabilité complète.
+
 #### [Procédures de Déploiement](operations/deployment-procedures.md)
 CI/CD GitHub Actions, Flux automation, rollback, validation et environnements.
 
