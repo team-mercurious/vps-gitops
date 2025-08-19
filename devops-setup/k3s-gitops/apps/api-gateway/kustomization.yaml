@@ -14,4 +14,4 @@ commonLabels:
 
 images:
   - name: ghcr.io/team-mercurious/api-gateway
-    newTag: latest # {"$imagepolicy": "flux-system:api-gateway"}
+    newTag: sha-42ea07da79640c76e651eaaa8146c87eb8db5d9b # {"$imagepolicy": "flux-system:api-gateway"}

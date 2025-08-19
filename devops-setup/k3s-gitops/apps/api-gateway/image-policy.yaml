@@ -16,48 +16,7 @@ spec:
   imageRepositoryRef:
     name: api-gateway
   policy:
-    semver:
-      range: '>=0.0.0'
----
-apiVersion: image.toolkit.fluxcd.io/v1beta1
-kind: ImageUpdateAutomation
-metadata:
-  name: api-gateway
-  namespace: flux-system
-spec:
-  interval: 5m
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  git:
-    checkout:
-      ref:
-        branch: main
-    commit:
-      author:
-        email: fluxcdbot@users.noreply.github.com
-        name: fluxcdbot
-      messageTemplate: |
-        Automated image update for api-gateway
-        
-        Automation name: {{ .AutomationObject }}
-
-        Files:
-        {{ range $filename, $_ := .Updated.Files -}}
-        - {{ $filename }}
-        {{ end -}}
-
-        Objects:
-        {{ range $resource, $_ := .Updated.Objects -}}
-        - {{ $resource.Kind }} {{ $resource.Name }}
-        {{ end -}}
-
-        Images:
-        {{ range .Updated.Images -}}
-        - {{.}}
-        {{ end -}}
-    push:
-      branch: main
-  update:
-    path: "./apps/api-gateway"
-    strategy: Setters
+    alphabetical:
+      order: asc
+    filterTags:
+      pattern: '^sha-[a-f0-9]+$'
