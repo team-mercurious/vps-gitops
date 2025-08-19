@@ -15,8 +15,8 @@ metadata:
 spec:
   imageRepositoryRef:
     name: api-enrichment
+  filterTags:
+    pattern: '^sha-[a-f0-9]+$'
   policy:
     alphabetical:
       order: asc
-    filterTags:
-      pattern: '^sha-[a-f0-9]+$'
